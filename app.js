@@ -11,6 +11,9 @@ const DEFAULT_CONFIG = {
   secondary_color: '#2563EB',
   header_bg: '#000000',
   announcement_text: '🚀 FREE NATIONWIDE SHIPPING ON ORDERS OVER $300 • 3 & 6 INTEREST-FREE INSTALLMENTS • 15% OFF VIA BANK TRANSFER',
+  hero_title: 'BUILD YOUR DREAM PC WITH TOP-TIER HARDWARE',
+  hero_subtitle: '100% original components with official warranty. Live socket compatibility validation and thermal wattage calculation.',
+  floating_bar_text: '🔥 New PC Builder 2.0: Instant Socket Validation & Wattage Calculation',
   whatsapp_number: '+1 (800) 555-0199',
   transfer_discount: 15,
   max_installments: 12
@@ -71,92 +74,94 @@ const DEFAULT_PRODUCTS = [
     category: 'motherboard',
     brand: 'ASUS',
     socket: 'AM5',
-    wattage: 45,
+    wattage: 50,
     price_usd: 289,
     price_pen: 1100,
-    badge: 'DDR5 + PCIE 5.0',
-    image: '../img/motherboard/amd/ASUS ROG Strix B650E-F Gaming WiFi.jpg'
+    badge: 'PCIE 5.0 READY',
+    image: '../img/mother/amd/ASUS ROG Strix B650E-F Gaming WiFi.jpg'
   },
   {
     id: 'mb-msi-z790',
-    name: 'MSI MPG Z790 Carbon WiFi Socket LGA1700',
+    name: 'MSI MPG Z790 Carbon WiFi Socket LGA1700 DDR5',
     category: 'motherboard',
     brand: 'MSI',
     socket: 'LGA1700',
-    wattage: 50,
+    wattage: 65,
     price_usd: 349,
     price_pen: 1330,
-    badge: 'INTEL 14TH READY',
-    image: '../img/motherboard/intel/MSI MPG Z790 Carbon WiFi.jpg'
+    badge: 'OVERCLOCKING',
+    image: '../img/mother/intel/MSI MPG Z790 Carbon WiFi.jpg'
   },
   {
     id: 'ram-corsair-32gb',
-    name: 'Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL30',
+    name: 'Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz CL30',
     category: 'ram',
     brand: 'Corsair',
     socket: 'DDR5',
     wattage: 15,
     price_usd: 129,
     price_pen: 490,
-    badge: 'DDR5 6000MHZ',
-    image: '../img/ram/Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz.jpg'
+    badge: 'AMD EXPO & XMP',
+    image: '../img/ram/corsair/Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz.jpg'
   },
   {
-    id: 'ssd-samsung-990-2tb',
-    name: 'Samsung 990 PRO 2TB NVMe M.2 Gen4 PCIe 4.0 7450MB/s',
+    id: 'ssd-samsung-990pro',
+    name: 'Samsung 990 PRO 2TB PCIe 4.0 NVMe M.2 SSD (7450MB/s)',
     category: 'storage',
     brand: 'Samsung',
-    socket: 'M.2',
+    socket: 'M.2 NVMe',
     wattage: 10,
     price_usd: 179,
     price_pen: 680,
-    badge: '7450 MB/S',
-    image: '../img/ssd/Samsung 990 PRO 2TB NVMe M.2 SSD.jpg'
+    badge: 'ULTRA FAST',
+    image: '../img/storage/samsung/Samsung 990 PRO 2TB PCIe 4.0 NVMe M.2.jpg'
   },
   {
-    id: 'cooler-nzxt-kraken-360',
-    name: 'NZXT Kraken Elite 360 RGB Liquid Cooler with LCD Display',
+    id: 'cooler-nzxt-kraken',
+    name: 'NZXT Kraken Elite 360 RGB Liquid Cooler (Custom LCD Screen)',
     category: 'cooler',
     brand: 'NZXT',
-    socket: 'Universal',
+    socket: 'AM5/LGA1700',
     wattage: 25,
     price_usd: 279,
     price_pen: 1060,
     badge: 'LCD DISPLAY',
-    image: '../img/cooler/NZXT Kraken Elite 360 RGB.jpg'
+    image: '../img/cooler/nzxt/NZXT Kraken Elite 360 RGB.jpg'
   },
   {
-    id: 'case-nzxt-h5-flow',
-    name: 'NZXT H5 Flow RGB Mesh Mid-Tower ATX Tempered Glass',
+    id: 'case-nzxt-h5',
+    name: 'NZXT H5 Flow RGB Tempered Glass Mid-Tower Case',
     category: 'case',
     brand: 'NZXT',
     socket: 'ATX',
     wattage: 0,
-    price_usd: 109,
-    price_pen: 415,
+    price_usd: 94,
+    price_pen: 360,
     badge: 'HIGH AIRFLOW',
     image: '../img/cabinet/NZXT H5 Flow RGB Mesh Mid-Tower ATX.jpg'
   },
   {
     id: 'psu-corsair-rm850x',
-    name: 'Corsair RM850x 850W 80 Plus Gold Fully Modular ATX 3.0',
+    name: 'Corsair RM850x Shift 850W 80+ Gold Fully Modular ATX 3.0',
     category: 'psu',
     brand: 'Corsair',
-    socket: 'ATX',
-    wattage: 850,
-    price_usd: 149,
-    price_pen: 565,
-    badge: '80+ GOLD',
-    image: '../img/power/Corsair RM850x 850W 80 Plus Gold Modular.jpg'
+    socket: 'ATX 3.0 / PCIe 5.0',
+    wattage: 0,
+    price_usd: 159,
+    price_pen: 605,
+    badge: '80+ GOLD CERTIFIED',
+    image: '../img/psu/corsair/Corsair RM850x Shift 850W 80 Plus Gold.jpg'
   },
   {
-    id: 'laptop-asus-tuf-a15',
-    name: 'ASUS TUF Gaming A15 Laptop (Ryzen 7 7735HS, RTX 4060, 16GB, 512GB)',
+    id: 'laptop-asus-scar',
+    name: 'ASUS ROG Strix SCAR 16 (i9-14900HX, RTX 4080, 240Hz Mini-LED)',
     category: 'notebooks',
     brand: 'ASUS',
-    price_usd: 999,
-    price_pen: 3800,
-    badge: '144HZ IPS',
+    socket: 'Mobile',
+    wattage: 230,
+    price_usd: 2899,
+    price_pen: 11020,
+    badge: 'BEAST LAPTOP',
     image: '../img/hero-grid/Notebook/Example.jpg'
   }
 ];
@@ -164,190 +169,199 @@ const DEFAULT_PRODUCTS = [
 const DEFAULT_PREBUILTS = [
   {
     id: 'prebuilt-titan',
-    name: 'TITAN RYZEN 7 7800X3D + RTX 4080 SUPER',
-    price_usd: 1899,
-    badge: 'BUILD OF THE WEEK',
-    image: '../img/gpu/nvidia/ASUS ROG Strix GeForce RTX 4080 Super 16GB.jpg',
-    specs: 'AMD Ryzen 7 7800X3D • RTX 4080 Super 16GB • 32GB DDR5 • 2TB NVMe Gen4'
-  },
-  {
-    id: 'prebuilt-flow',
-    name: 'FLOW GAMER RYZEN 5 + GTX 1660 TI',
-    price_usd: 1030,
-    badge: 'POPULAR',
+    name: 'TITAN RYZEN 7 7800X3D + RTX 4080 SUPER 16GB',
+    price_usd: 2899,
+    badge: 'RECOMMENDED TOP PICK',
     image: '../img/cabinet/NZXT H5 Flow RGB Mesh Mid-Tower ATX.jpg',
-    specs: 'AMD Ryzen 5 5600X • GTX 1660 Ti 6GB • 16GB DDR4 • 512GB SSD'
+    specs: 'Ryzen 7 7800X3D • RTX 4080 Super • 32GB DDR5 • 2TB Gen4 SSD • 850W Gold'
   },
   {
-    id: 'prebuilt-peak',
-    name: 'PEAK INTEL CORE I5 + RTX 4060',
-    price_usd: 1190,
-    badge: 'BEST VALUE',
-    image: '../img/cabinet/Corsair 4000D Airflow Tempered Glass ATX.jpg',
-    specs: 'Intel Core i5-13400F • RTX 4060 8GB DLSS 3 • 16GB DDR5 • 1TB M.2'
+    id: 'prebuilt-vortex',
+    name: 'VORTEX CORE I7-14700K + RTX 4070 TI SUPER',
+    price_usd: 2199,
+    badge: 'PRO CREATOR & GAMING',
+    image: '../img/gpu/nvidia/ASUS ROG Strix GeForce RTX 4080 Super 16GB.jpg',
+    specs: 'Intel Core i7-14700K • RTX 4070 Ti Super • 32GB DDR5 • 1TB SSD • 750W'
+  },
+  {
+    id: 'prebuilt-apex',
+    name: 'APEX RYZEN 5 7600 + RTX 4060 TI 8GB',
+    price_usd: 1249,
+    badge: '1080P/1440P SWEET SPOT',
+    image: '../img/hero-grid/PC GAMER/Example.jpg',
+    specs: 'Ryzen 5 7600 • RTX 4060 Ti • 16GB DDR5 • 1TB NVMe SSD • 650W Bronze'
+  },
+  {
+    id: 'prebuilt-entry',
+    name: 'FURY RYZEN 5 5600 + RX 6600 8GB',
+    price_usd: 749,
+    badge: 'BUDGET CHAMPION',
+    image: '../img/hero-grid/PC GAMER/Example.jpg',
+    specs: 'Ryzen 5 5600 • Radeon RX 6600 • 16GB DDR4 • 500GB SSD • 550W'
   }
 ];
 
 const DEFAULT_TICKETS = [
   {
     code: 'CH-8492',
-    customer: 'Daniel R.',
-    device: 'PC Custom Gaming (i7-13700K / RTX 3080)',
-    issue: 'Preventative Maintenance, Thermal Grizzly Paste Renewal & Cable Management',
-    stage: 4, // 1: Intake, 2: Tech Diagnostics, 3: Cleaning & Repair, 4: Stress Testing, 5: Ready for Pickup
-    date: 'Aug 04 - 10:30 AM',
-    notes: 'Max temperatures reduced by 14°C in FurMark stress testing. 24h stability verification in progress.'
+    customer: 'Alex Turner',
+    device: 'Custom Rig (i9-13900K / RTX 4090 Liquid)',
+    issue: 'Preventive thermal paste replacement & Arctic MX-6 upgrade',
+    current_stage: 4,
+    tech_notes: 'Thermal paste reapplied. Running 24h Cinebench R23 and FurMark stability loop. Max temp: 72°C.'
   },
   {
-    code: 'CH-9104',
-    customer: 'Sophia M.',
-    device: 'ASUS TUF Gaming A15 Laptop',
-    issue: 'Display ribbon cable disconnected after accidental drop. Blank screen.',
-    stage: 2,
-    date: 'Aug 18 - 04:45 PM',
-    notes: 'Tested GPU output with external HDMI screen OK. Proceeding to display cable replacement.'
+    code: 'CH-7731',
+    customer: 'Sarah Jenkins',
+    device: 'ASUS ROG Gaming Laptop',
+    issue: 'Random bluescreens and overheating',
+    current_stage: 3,
+    tech_notes: 'Fan dust cleaned out, liquid metal reapplied on CPU/GPU dice.'
   }
 ];
 
-// --- 2. Application State ---
-class AppState {
-  constructor() {
-    this.config = this.loadLocal('ch_light_config_en', DEFAULT_CONFIG);
-    this.products = this.loadLocal('ch_light_products_en', DEFAULT_PRODUCTS);
-    this.prebuilts = this.loadLocal('ch_light_prebuilts_en', DEFAULT_PREBUILTS);
-    this.tickets = this.loadLocal('ch_light_tickets_en', DEFAULT_TICKETS);
-    this.cart = this.loadLocal('ch_light_cart_en', []);
-    this.activeView = 'home';
-    this.currency = 'USD';
-    this.appliedCoupon = null;
-    this.builderState = {
-      cpu: null,
-      motherboard: null,
-      ram: null,
-      gpu: null,
-      storage: null,
-      case: null,
-      psu: null,
-      cooler: null
-    };
-    this.activeBuilderStep = 'cpu';
-  }
+// --- 2. State Controller ---
+const state = {
+  config: JSON.parse(localStorage.getItem('ch_light_config')) || DEFAULT_CONFIG,
+  products: JSON.parse(localStorage.getItem('ch_light_products')) || DEFAULT_PRODUCTS,
+  prebuilts: JSON.parse(localStorage.getItem('ch_light_prebuilts')) || DEFAULT_PREBUILTS,
+  tickets: JSON.parse(localStorage.getItem('ch_light_tickets')) || DEFAULT_TICKETS,
+  cart: JSON.parse(localStorage.getItem('ch_light_cart')) || [],
+  currency: 'USD',
+  activeView: 'home',
+  activeCategoryPill: 'all',
+  catalogPage: 0,
+  itemsPerPage: 8,
+  appliedCoupon: null,
 
-  loadLocal(key, defaultVal) {
-    try {
-      const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : defaultVal;
-    } catch (e) {
-      return defaultVal;
-    }
-  }
-
-  saveLocal(key, val) {
-    try {
-      localStorage.setItem(key, JSON.stringify(val));
-    } catch (e) {}
-  }
-
-  saveConfig(newConfig) {
-    this.config = { ...this.config, ...newConfig };
-    this.saveLocal('ch_light_config_en', this.config);
-    this.applyThemeVars();
-  }
+  // PC Builder State
+  builderState: {
+    cpu: null,
+    motherboard: null,
+    ram: null,
+    gpu: null,
+    storage: null,
+    cooler: null,
+    case: null,
+    psu: null
+  },
+  activeBuilderStep: 'cpu',
 
   applyThemeVars() {
-    const root = document.documentElement;
-    root.style.setProperty('--primary-color', this.config.primary_color || '#FF3E00');
-    root.style.setProperty('--primary-hover', this.config.primary_hover || '#E03700');
-    root.style.setProperty('--secondary-color', this.config.secondary_color || '#2563EB');
-    root.style.setProperty('--header-bg', this.config.header_bg || '#000000');
+    document.documentElement.style.setProperty('--primary-color', this.config.primary_color);
+    document.documentElement.style.setProperty('--secondary-color', this.config.secondary_color);
   }
-}
-
-const state = new AppState();
-
-// --- 3. Currency & Formatting Helpers ---
-const CURRENCY_RATES = {
-  USD: { symbol: '$', rate: 1 },
-  PEN: { symbol: 'S/', rate: 3.8 },
-  EUR: { symbol: '€', rate: 0.92 },
-  ARS: { symbol: '$', rate: 1250 }
 };
 
+// --- 3. Currency Helpers ---
 function formatMoney(amountUSD) {
-  const c = CURRENCY_RATES[state.currency] || CURRENCY_RATES.USD;
-  const converted = amountUSD * c.rate;
-  return `${c.symbol} ${converted.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  const num = Number(amountUSD) || 0;
+  if (state.currency === 'PEN') {
+    const penVal = Math.round(num * 3.8);
+    return `S/. ${penVal.toLocaleString()}`;
+  }
+  return `$ ${num.toLocaleString()}`;
 }
 
-// --- 4. Navigation & Views Router ---
-function navigateTo(view, categoryKey = 'all') {
-  state.activeView = view;
+// --- 4. Navigation Router ---
+function navigateTo(viewName, catKey = 'all') {
+  state.activeView = viewName;
+  const views = ['view-home', 'view-catalog', 'view-prebuilts', 'view-builder', 'view-services'];
+  views.forEach(v => {
+    const el = document.getElementById(v);
+    if (el) el.style.display = (v === `view-${viewName}`) ? 'block' : 'none';
+  });
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Hide all sections
-  document.getElementById('view-home').style.display = view === 'home' ? 'block' : 'none';
-  document.getElementById('view-catalog').style.display = view === 'catalog' ? 'block' : 'none';
-  document.getElementById('view-builder').style.display = view === 'builder' ? 'block' : 'none';
-  document.getElementById('view-prebuilts').style.display = view === 'prebuilts' ? 'block' : 'none';
-  document.getElementById('view-services').style.display = view === 'services' ? 'block' : 'none';
-
-  if (view === 'catalog') {
-    renderCatalog(categoryKey);
-  } else if (view === 'builder') {
-    renderPCBuilder();
-  } else if (view === 'prebuilts') {
+  if (viewName === 'home') {
+    renderHome();
+  } else if (viewName === 'catalog') {
+    renderCatalog(catKey);
+  } else if (viewName === 'prebuilts') {
     renderPrebuiltsView();
-  } else if (view === 'services') {
+  } else if (viewName === 'builder') {
+    renderPCBuilder();
+  } else if (viewName === 'services') {
     renderRepairTracker();
   }
 }
 
 // --- 5. Render Functions ---
 
-// A. Home View
+// A. Home View & Featured Catalog
 function renderHome() {
-  // 1. Bento Featured Rig
-  const bentoContainer = document.getElementById('bento-featured-item');
-  const titan = state.prebuilts[0];
-  if (bentoContainer && titan) {
-    bentoContainer.innerHTML = `
-      <div style="flex: 1;">
-        <span class="category-tile-badge">${titan.badge}</span>
-        <h3 style="font-size: 20px; font-weight: 800; margin: 8px 0;">${titan.name}</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">${titan.specs}</p>
-        <div class="product-price" style="margin-bottom: 14px;">${formatMoney(titan.price_usd)}</div>
-        <button class="btn-primary" onclick="addToCart({ name: '${titan.name}', price: ${titan.price_usd}, image: '${titan.image}' })">
-          🛒 Buy Gaming PC
-        </button>
-      </div>
-      <img src="${titan.image}" alt="${titan.name}" style="width: 180px; height: 180px; object-fit: contain;">
-    `;
-  }
-
-  // 2. Home Prebuilts
-  const homePrebuiltsGrid = document.getElementById('home-prebuilts-grid');
-  if (homePrebuiltsGrid) {
-    homePrebuiltsGrid.innerHTML = state.prebuilts.map(pb => `
-      <div class="product-card">
-        <span class="product-badge">${pb.badge}</span>
-        <div class="product-img-wrapper">
-          <img src="${pb.image}" class="product-img" alt="${pb.name}">
-        </div>
-        <div>
-          <h4 class="product-title">${pb.name}</h4>
-          <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">${pb.specs}</p>
-          <div class="product-price">${formatMoney(pb.price_usd)}</div>
-          <div class="product-installments">💳 12 monthly installments of ${formatMoney(pb.price_usd / 12)}</div>
-        </div>
-        <button class="btn-primary" style="width: 100%; margin-top: 14px;" onclick="addToCart({ name: '${pb.name}', price: ${pb.price_usd}, image: '${pb.image}' })">
-          Add to Cart
-        </button>
-      </div>
-    `).join('');
-  }
+  renderHomeFeaturedCatalog(state.activeCategoryPill, state.catalogPage);
 }
 
-// B. Catalog View
+function filterCatalogPill(catKey, btnElement) {
+  state.activeCategoryPill = catKey;
+  state.catalogPage = 0;
+
+  document.querySelectorAll('#home-category-pills .category-pill-tab').forEach(b => b.classList.remove('active'));
+  if (btnElement) btnElement.classList.add('active');
+
+  renderHomeFeaturedCatalog(catKey, 0);
+}
+
+function prevCatalogPage() {
+  state.catalogPage = Math.max(0, state.catalogPage - 1);
+  renderHomeFeaturedCatalog(state.activeCategoryPill, state.catalogPage);
+}
+
+function nextCatalogPage() {
+  const filtered = state.activeCategoryPill === 'all'
+    ? state.products
+    : state.products.filter(p => p.category === state.activeCategoryPill);
+  const totalPages = Math.ceil(filtered.length / state.itemsPerPage) || 1;
+  state.catalogPage = Math.min(totalPages - 1, state.catalogPage + 1);
+  renderHomeFeaturedCatalog(state.activeCategoryPill, state.catalogPage);
+}
+
+function renderHomeFeaturedCatalog(category = 'all', page = 0) {
+  const container = document.getElementById('home-featured-products-grid');
+  const pageIndicator = document.getElementById('demo-catalog-page-indicator');
+  if (!container) return;
+
+  const filtered = category === 'all'
+    ? state.products
+    : state.products.filter(p => p.category === category);
+
+  const totalPages = Math.ceil(filtered.length / state.itemsPerPage) || 1;
+  const displayed = filtered.slice(page * state.itemsPerPage, (page + 1) * state.itemsPerPage);
+
+  if (pageIndicator) {
+    pageIndicator.innerText = `${page + 1} / ${totalPages}`;
+  }
+
+  container.innerHTML = displayed.map(p => {
+    const regularPrice = Math.round(p.price_usd * 1.18);
+    const savings = regularPrice - p.price_usd;
+
+    return `
+      <div class="product-card">
+        ${p.badge ? `<span class="product-card-badge">✨ ${p.badge}</span>` : ''}
+        <div class="product-img-wrapper" onclick="addToCart({ name: '${p.name}', price: ${p.price_usd}, image: '${p.image}' })">
+          <img src="${p.image}" alt="${p.name}">
+        </div>
+        <div>
+          <div class="product-brand-tag">${p.brand || 'ORIGINAL'} ${p.socket ? `• ${p.socket}` : ''}</div>
+          <h4 class="product-title" title="${p.name}">${p.name}</h4>
+          <div class="product-price-strikethrough">${formatMoney(regularPrice)}</div>
+          <div class="product-price-current">${formatMoney(p.price_usd)}</div>
+          ${savings > 0 ? `<div class="product-savings-badge">Save ${formatMoney(savings)}</div>` : ''}
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-primary" style="flex: 1;" onclick="addToCart({ name: '${p.name}', price: ${p.price_usd}, image: '${p.image}' })">
+            🛒 Buy Now
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// B. Dedicated Catalog View
 function renderCatalog(selectedCat = 'all') {
   const container = document.getElementById('catalog-products-grid');
   const catTitle = document.getElementById('catalog-current-category-title');
@@ -361,51 +375,64 @@ function renderCatalog(selectedCat = 'all') {
     catTitle.innerText = selectedCat === 'all' ? 'All Hardware Components' : `Category: ${selectedCat.toUpperCase()}`;
   }
 
-  container.innerHTML = filtered.map(p => `
-    <div class="product-card">
-      ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-      <div class="product-img-wrapper">
-        <img src="${p.image}" class="product-img" alt="${p.name}">
+  container.innerHTML = filtered.map(p => {
+    const regularPrice = Math.round(p.price_usd * 1.18);
+    const savings = regularPrice - p.price_usd;
+    return `
+      <div class="product-card">
+        ${p.badge ? `<span class="product-card-badge">✨ ${p.badge}</span>` : ''}
+        <div class="product-img-wrapper">
+          <img src="${p.image}" alt="${p.name}">
+        </div>
+        <div>
+          <div class="product-brand-tag">${p.brand || 'ORIGINAL'} ${p.socket ? `• ${p.socket}` : ''}</div>
+          <h4 class="product-title">${p.name}</h4>
+          <div class="product-price-strikethrough">${formatMoney(regularPrice)}</div>
+          <div class="product-price-current">${formatMoney(p.price_usd)}</div>
+          ${savings > 0 ? `<div class="product-savings-badge">Save ${formatMoney(savings)}</div>` : ''}
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-primary" style="flex: 1;" onclick="addToCart({ name: '${p.name}', price: ${p.price_usd}, image: '${p.image}' })">
+            🛒 Add to Cart
+          </button>
+        </div>
       </div>
-      <div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--secondary-color);">${p.brand || ''} ${p.socket ? `• ${p.socket}` : ''}</span>
-        <h4 class="product-title">${p.name}</h4>
-        <div class="product-price">${formatMoney(p.price_usd)}</div>
-        <div class="product-installments">💳 12 monthly installments of ${formatMoney(p.price_usd / 12)}</div>
-      </div>
-      <div style="display: flex; gap: 8px; margin-top: 14px;">
-        <button class="btn-primary" style="flex: 1;" onclick="addToCart({ name: '${p.name}', price: ${p.price_usd}, image: '${p.image}' })">
-          🛒 Buy Now
-        </button>
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 // C. Prebuilts View
 function renderPrebuiltsView() {
-  const container = document.getElementById('prebuilts-view-grid');
+  const container = document.getElementById('prebuilts-products-grid');
   if (!container) return;
-  container.innerHTML = state.prebuilts.map(pb => `
-    <div class="product-card">
-      <span class="product-badge">${pb.badge}</span>
-      <div class="product-img-wrapper">
-        <img src="${pb.image}" class="product-img" alt="${pb.name}">
+
+  container.innerHTML = state.prebuilts.map(pb => {
+    const regularPrice = Math.round(pb.price_usd * 1.15);
+    const savings = regularPrice - pb.price_usd;
+
+    return `
+      <div class="product-card">
+        <span class="product-card-badge">⚡ ${pb.badge}</span>
+        <div class="product-img-wrapper">
+          <img src="${pb.image}" alt="${pb.name}">
+        </div>
+        <div>
+          <div class="product-brand-tag">OFFICIAL BATTLE-RIG</div>
+          <h4 class="product-title">${pb.name}</h4>
+          <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">${pb.specs}</p>
+          <div class="product-price-strikethrough">${formatMoney(regularPrice)}</div>
+          <div class="product-price-current">${formatMoney(pb.price_usd)}</div>
+          ${savings > 0 ? `<div class="product-savings-badge">Save ${formatMoney(savings)}</div>` : ''}
+        </div>
+        <button class="btn-primary" style="width: 100%; margin-top: 14px;" onclick="addToCart({ name: '${pb.name}', price: ${pb.price_usd}, image: '${pb.image}' })">
+          🛒 Buy Gaming PC
+        </button>
       </div>
-      <div>
-        <h4 class="product-title">${pb.name}</h4>
-        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">${pb.specs}</p>
-        <div class="product-price">${formatMoney(pb.price_usd)}</div>
-        <div class="product-installments">💳 12 monthly installments of ${formatMoney(pb.price_usd / 12)}</div>
-      </div>
-      <button class="btn-primary" style="width: 100%; margin-top: 14px;" onclick="addToCart({ name: '${pb.name}', price: ${pb.price_usd}, image: '${pb.image}' })">
-        Add to Cart
-      </button>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
-// D. PC Builder View (Socket Validation & Thermal Wattage Engine)
+// D. PC Builder Step Wizard
 const BUILDER_STEPS = [
   { key: 'cpu', label: '1. Processor (CPU)' },
   { key: 'motherboard', label: '2. Motherboard' },
@@ -417,23 +444,18 @@ const BUILDER_STEPS = [
   { key: 'psu', label: '8. Power Supply (PSU)' }
 ];
 
-function selectBuilderStep(stepKey) {
-  state.activeBuilderStep = stepKey;
-  renderPCBuilder();
-}
-
 function selectBuilderComponent(stepKey, product) {
   state.builderState[stepKey] = product;
-  
-  // If CPU changed and Motherboard is incompatible, reset motherboard
+
+  // Socket Compatibility Check
   if (stepKey === 'cpu' && state.builderState.motherboard) {
     if (state.builderState.motherboard.socket !== product.socket) {
       state.builderState.motherboard = null;
-      alert(`⚠️ CPU Socket changed to ${product.socket}. Motherboard selection was reset to guarantee 100% hardware compatibility.`);
+      alert(`⚠️ Socket mismatch! Motherboard reset to match new CPU socket: ${product.socket}`);
     }
   }
 
-  // Move to next step automatically
+  // Advance step
   const currentIndex = BUILDER_STEPS.findIndex(s => s.key === stepKey);
   if (currentIndex < BUILDER_STEPS.length - 1) {
     state.activeBuilderStep = BUILDER_STEPS[currentIndex + 1].key;
@@ -442,308 +464,282 @@ function selectBuilderComponent(stepKey, product) {
 }
 
 function renderPCBuilder() {
-  const stepper = document.getElementById('builder-stepper');
-  const itemsContainer = document.getElementById('builder-items-list');
-  const summaryContainer = document.getElementById('builder-summary-card');
+  const titleEl = document.getElementById('builder-step-title');
+  const wattsEl = document.getElementById('builder-total-watts');
+  const socketEl = document.getElementById('builder-active-socket');
+  const countEl = document.getElementById('builder-components-count');
+  const priceEl = document.getElementById('builder-total-price');
+  const gridEl = document.getElementById('builder-components-selection-grid');
 
-  // 1. Render Stepper
-  if (stepper) {
-    stepper.innerHTML = BUILDER_STEPS.map(s => {
-      const isSelected = !!state.builderState[s.key];
-      const isActive = state.activeBuilderStep === s.key;
-      return `
-        <button class="step-tab ${isActive ? 'active' : ''} ${isSelected ? 'completed' : ''}" onclick="selectBuilderStep('${s.key}')">
-          ${isSelected ? '✓ ' : ''}${s.label}
-        </button>
-      `;
-    }).join('');
-  }
+  const currentStepObj = BUILDER_STEPS.find(s => s.key === state.activeBuilderStep) || BUILDER_STEPS[0];
+  if (titleEl) titleEl.innerText = `Step: ${currentStepObj.label}`;
 
-  // 2. Filter available components based on selected CPU socket
-  let availableProducts = state.products.filter(p => p.category === state.activeBuilderStep);
-  if (state.activeBuilderStep === 'motherboard' && state.builderState.cpu) {
-    availableProducts = availableProducts.filter(p => p.socket === state.builderState.cpu.socket);
-  }
+  // Calculate totals
+  let totalWatts = 50; // base system wattage
+  let totalPrice = 0;
+  let selectedCount = 0;
 
-  if (itemsContainer) {
-    if (availableProducts.length === 0) {
-      itemsContainer.innerHTML = `
-        <div style="padding: 40px; text-align: center; color: var(--text-secondary); background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border-color);">
-          <p style="font-size: 16px; font-weight: 700;">No compatible components available for socket ${state.builderState.cpu?.socket || ''}</p>
-        </div>
-      `;
-    } else {
-      itemsContainer.innerHTML = availableProducts.map(p => {
-        const isCurrentSelected = state.builderState[state.activeBuilderStep]?.id === p.id;
-        return `
-          <div class="card" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; ${isCurrentSelected ? 'border-color: var(--primary-color); background: rgba(255, 62, 0, 0.04);' : ''}">
-            <div style="display: flex; align-items: center; gap: 16px;">
-              <img src="${p.image}" style="width: 60px; height: 60px; object-fit: contain;">
-              <div>
-                <span style="font-size: 11px; font-weight: 700; color: var(--secondary-color);">${p.brand} • ${p.socket || ''} • Power Draw: ${p.wattage}W</span>
-                <h4 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 2px 0;">${p.name}</h4>
-                <div class="product-price" style="font-size: 16px;">${formatMoney(p.price_usd)}</div>
-              </div>
-            </div>
-            <button class="${isCurrentSelected ? 'btn-secondary' : 'btn-primary'}" onclick='selectBuilderComponent("${state.activeBuilderStep}", ${JSON.stringify(p)})'>
-              ${isCurrentSelected ? '✓ Selected' : 'Choose'}
-            </button>
-          </div>
-        `;
-      }).join('');
-    }
-  }
-
-  // 3. Render Summary & Wattage Check
-  let totalBuildUSD = 0;
-  let totalWattage = 50; // base system wattage
-  Object.values(state.builderState).forEach(item => {
-    if (item) {
-      totalBuildUSD += item.price_usd;
-      totalWattage += (item.wattage || 0);
+  Object.values(state.builderState).forEach(p => {
+    if (p) {
+      totalWatts += (p.wattage || 0);
+      totalPrice += (p.price_usd || 0);
+      selectedCount++;
     }
   });
 
-  const recommendedPSU = Math.ceil((totalWattage * 1.3) / 50) * 50;
+  if (wattsEl) wattsEl.innerText = `${totalWatts} W`;
+  if (priceEl) priceEl.innerText = formatMoney(totalPrice);
+  if (countEl) countEl.innerText = `${selectedCount} / 8`;
 
-  if (summaryContainer) {
-    summaryContainer.innerHTML = `
-      <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
-        BUILD SUMMARY
-      </h3>
-      
-      <div style="background: var(--bg-base); padding: 12px; border-radius: 8px; margin-bottom: 16px; border: 1px solid var(--border-color);">
-        <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
-          <span>Estimated Power Draw:</span>
-          <strong>${totalWattage} W</strong>
+  if (socketEl) {
+    socketEl.innerText = state.builderState.cpu ? state.builderState.cpu.socket : 'NONE (Select CPU)';
+  }
+
+  // Filter available items for current step
+  let available = state.products.filter(p => p.category === state.activeBuilderStep);
+
+  // If selecting motherboard and CPU is selected, filter by socket!
+  if (state.activeBuilderStep === 'motherboard' && state.builderState.cpu) {
+    available = available.filter(p => p.socket === state.builderState.cpu.socket);
+  }
+
+  if (gridEl) {
+    gridEl.innerHTML = available.map(p => {
+      const isSelected = state.builderState[state.activeBuilderStep]?.id === p.id;
+      return `
+        <div class="product-card" style="border: 2px solid ${isSelected ? 'var(--primary-color)' : 'var(--border-color)'};">
+          <div class="product-img-wrapper">
+            <img src="${p.image}" alt="${p.name}">
+          </div>
+          <div>
+            <div class="product-brand-tag">${p.brand} • ${p.socket || ''}</div>
+            <h4 class="product-title">${p.name}</h4>
+            <div class="product-price-current">${formatMoney(p.price_usd)}</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">⚡ Consumption: ${p.wattage || 0}W</div>
+          </div>
+          <button class="btn-primary" style="margin-top: 12px; background: ${isSelected ? 'var(--accent-green)' : 'var(--primary-color)'};" onclick="selectBuilderComponent('${state.activeBuilderStep}', ${JSON.stringify(p).replace(/"/g, '&quot;')})">
+            ${isSelected ? '✓ Selected' : '+ Select Component'}
+          </button>
         </div>
-        <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--accent-green);">
-          <span>Recommended PSU:</span>
-          <strong>${recommendedPSU} W or higher</strong>
-        </div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; margin-bottom: 16px;">
-        ${BUILDER_STEPS.map(s => {
-          const item = state.builderState[s.key];
-          return `
-            <div style="display: flex; justify-content: space-between; color: ${item ? 'var(--text-primary)' : 'var(--text-muted)'};">
-              <span style="max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${s.label.split('.')[1]}: ${item ? item.name : 'Not selected'}</span>
-              <span>${item ? formatMoney(item.price_usd) : '-'}</span>
-            </div>
-          `;
-        }).join('')}
-      </div>
-
-      <div style="border-top: 1px solid var(--border-color); padding-top: 12px; margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; font-size: 16px; font-weight: 800;">
-          <span>Total:</span>
-          <span class="product-price">${formatMoney(totalBuildUSD)}</span>
-        </div>
-      </div>
-
-      <button class="btn-primary" style="width: 100%;" onclick="addCustomPCToCart(${totalBuildUSD})">
-        🛒 Buy Complete Custom PC
-      </button>
-    `;
+      `;
+    }).join('');
   }
 }
 
-function addCustomPCToCart(totalUSD) {
-  if (totalUSD === 0) {
-    alert('Please select at least the processor (CPU) to build your custom PC.');
+function finishPCBuild() {
+  const selected = Object.values(state.builderState).filter(Boolean);
+  if (selected.length === 0) {
+    alert('Please select at least one component to build your PC.');
     return;
   }
-  const customPC = {
-    name: 'Custom PC Rig (' + (state.builderState.cpu?.name || 'Custom Build') + ')',
-    price: totalUSD,
+  const total = selected.reduce((sum, item) => sum + item.price_usd, 0);
+  addToCart({
+    name: `Custom PC Rig (${selected.length} Components: ${state.builderState.cpu ? state.builderState.cpu.name : 'Custom'})`,
+    price: total,
     image: '../img/cabinet/NZXT H5 Flow RGB Mesh Mid-Tower ATX.jpg'
-  };
-  addToCart(customPC);
-}
-
-// E. Repair & RMA Tracker View
-function renderRepairTracker() {
-  const searchInput = document.getElementById('rma-search-input');
-  const query = (searchInput?.value || 'CH-8492').trim().toUpperCase();
-  const ticket = state.tickets.find(t => t.code.toUpperCase() === query) || state.tickets[0];
-  const resultCard = document.getElementById('rma-ticket-details');
-
-  if (resultCard && ticket) {
-    const stages = [
-      '1. Intake',
-      '2. Tech Diagnostics',
-      '3. Cleaning & Repair',
-      '4. Stress Testing',
-      '5. Ready for Pickup'
-    ];
-
-    resultCard.innerHTML = `
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
-        <div>
-          <span class="category-tile-badge">ACTIVE REPAIR ORDER</span>
-          <h3 style="font-size: 20px; font-weight: 800; margin-top: 4px;">Ticket #${ticket.code} — ${ticket.device}</h3>
-          <p style="font-size: 13px; color: var(--text-secondary);">Customer: ${ticket.customer} • Intake: ${ticket.date}</p>
-        </div>
-        <div style="text-align: right;">
-          <span style="font-size: 12px; font-weight: 700; color: var(--accent-green);">● LIVE WORKSHOP STATUS</span>
-        </div>
-      </div>
-
-      <!-- Stage Progress Stepper -->
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 20px 0;">
-        ${stages.map((stg, idx) => {
-          const isDone = (idx + 1) <= ticket.stage;
-          const isCurrent = (idx + 1) === ticket.stage;
-          return `
-            <div style="background: ${isDone ? 'var(--primary-color)' : 'var(--bg-base)'}; color: ${isDone ? '#FFFFFF' : 'var(--text-muted)'}; padding: 10px 8px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700; border: 1px solid var(--border-color);">
-              ${isDone ? '✓ ' : ''}${stg}
-            </div>
-          `;
-        }).join('')}
-      </div>
-
-      <div style="background: var(--bg-base); padding: 14px; border-radius: 8px; border: 1px solid var(--border-color);">
-        <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">Reported Issue / Fault:</h4>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">${ticket.issue}</p>
-        <h4 style="font-size: 13px; font-weight: 700; color: var(--primary-color); margin-bottom: 4px;">Lab Specialist Note:</h4>
-        <p style="font-size: 13px; color: var(--text-primary); font-family: var(--font-mono);">${ticket.notes}</p>
-      </div>
-    `;
-  }
-}
-
-// --- 6. Shopping Cart & Checkout ---
-function addToCart(item) {
-  state.cart.push(item);
-  state.saveLocal('ch_light_cart_en', state.cart);
-  updateCartBadge();
+  });
   openCartDrawer();
 }
 
-function removeFromCart(index) {
-  state.cart.splice(index, 1);
-  state.saveLocal('ch_light_cart_en', state.cart);
+// E. Repair RMA Tracker View
+function searchRepairTicket(e) {
+  if (e) e.preventDefault();
+  const code = document.getElementById('rma-search-code-input').value.trim().toUpperCase();
+  const resultBox = document.getElementById('rma-ticket-result-box');
+  if (!resultBox) return;
+
+  const ticket = state.tickets.find(t => t.code === code) || state.tickets[0];
+
+  const stages = [
+    '1. Check-in & Intake',
+    '2. Hardware Diagnostics',
+    '3. Repair & Cleaning',
+    '4. 24h Stress Testing',
+    '5. Ready for Pickup'
+  ];
+
+  resultBox.innerHTML = `
+    <div class="card" style="padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 20px;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--primary-color);">TICKET: ${ticket.code}</span>
+          <h3 style="font-size: 18px; font-weight: 800; margin-top: 4px;">${ticket.device}</h3>
+          <span style="font-size: 12px; color: var(--text-secondary);">Client: ${ticket.customer}</span>
+        </div>
+        <span style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green); padding: 6px 12px; border-radius: var(--radius-pill); font-weight: 800; font-size: 12px;">
+          IN LABORATORY
+        </span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 24px;">
+        ${stages.map((st, i) => {
+          const isDone = (i + 1) <= ticket.current_stage;
+          const isCurrent = (i + 1) === ticket.current_stage;
+          return `
+            <div style="text-align: center;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; background: ${isDone ? 'var(--primary-color)' : 'var(--border-color)'}; color: #FFFFFF;">
+                ${isDone ? '✓' : i + 1}
+              </div>
+              <div style="font-size: 10px; font-weight: 700; color: ${isCurrent ? 'var(--primary-color)' : 'var(--text-secondary)'};">${st}</div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <div style="background: var(--bg-base); border: 1px solid var(--border-color); padding: 14px; border-radius: 8px;">
+        <div style="font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Technical Laboratory Report:</div>
+        <p style="font-size: 13px; font-weight: 600; color: var(--text-primary); margin-top: 4px;">"${ticket.tech_notes}"</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderRepairTracker() {
+  searchRepairTicket();
+}
+
+// --- 6. Cart Engine ---
+function addToCart(item) {
+  state.cart.push(item);
+  localStorage.setItem('ch_light_cart', JSON.stringify(state.cart));
+  updateCartBadge();
+  renderCartDrawer();
+  openCartDrawer();
+}
+
+function removeFromCart(idx) {
+  state.cart.splice(idx, 1);
+  localStorage.setItem('ch_light_cart', JSON.stringify(state.cart));
   updateCartBadge();
   renderCartDrawer();
 }
 
 function updateCartBadge() {
-  const badge = document.getElementById('header-cart-count');
-  if (badge) badge.innerText = state.cart.length;
+  const countEl = document.getElementById('header-cart-count');
+  const totalEl = document.getElementById('header-cart-total');
+  const total = state.cart.reduce((sum, item) => sum + (item.price || item.price_usd || 0), 0);
+
+  if (countEl) countEl.innerText = state.cart.length;
+  if (totalEl) totalEl.innerText = formatMoney(total);
 }
 
 function openCartDrawer() {
-  document.getElementById('cart-drawer').classList.add('open');
-  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-drawer-overlay').classList.add('open');
   renderCartDrawer();
 }
 
 function closeCartDrawer() {
-  document.getElementById('cart-drawer').classList.remove('open');
-  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-drawer-overlay').classList.remove('open');
 }
 
 function applyCouponCode() {
-  const code = document.getElementById('coupon-input')?.value.trim().toUpperCase();
-  if (code === 'GAMER10') {
-    state.appliedCoupon = { code: 'GAMER10', discount: 10, type: 'percent' };
-    alert('🎉 Promo coupon GAMER10 applied! 10% discount.');
-  } else if (code === 'WELCOME50') {
-    state.appliedCoupon = { code: 'WELCOME50', discount: 50, type: 'fixed' };
-    alert('🎉 Promo coupon WELCOME50 applied! $50 USD discount.');
+  const input = document.getElementById('cart-coupon-input').value.trim().toUpperCase();
+  const feedback = document.getElementById('coupon-feedback-msg');
+
+  if (input === 'GAMER10') {
+    state.appliedCoupon = { code: 'GAMER10', discount: 0.10 };
+    feedback.style.color = 'var(--accent-green)';
+    feedback.innerText = '✓ Coupon GAMER10 applied: 10% OFF!';
+  } else if (input === 'WELCOME50') {
+    state.appliedCoupon = { code: 'WELCOME50', fixed: 50 };
+    feedback.style.color = 'var(--accent-green)';
+    feedback.innerText = '✓ Coupon WELCOME50 applied: $50 OFF!';
   } else {
-    alert('❌ Invalid coupon code. Try GAMER10 or WELCOME50.');
+    feedback.style.color = 'var(--accent-red)';
+    feedback.innerText = '✕ Invalid coupon code.';
   }
   renderCartDrawer();
 }
 
 function renderCartDrawer() {
-  const list = document.getElementById('cart-items-list');
-  const subtotalEl = document.getElementById('cart-subtotal-val');
-  const discountEl = document.getElementById('cart-discount-val');
-  const totalEl = document.getElementById('cart-total-val');
-
-  if (!list) return;
+  const listEl = document.getElementById('cart-items-list');
+  const regTotalEl = document.getElementById('cart-regular-total');
+  const transferTotalEl = document.getElementById('cart-transfer-total');
+  if (!listEl) return;
 
   if (state.cart.length === 0) {
-    list.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 40px;">Your shopping cart is empty.</p>`;
-    if (subtotalEl) subtotalEl.innerText = formatMoney(0);
-    if (discountEl) discountEl.innerText = formatMoney(0);
-    if (totalEl) totalEl.innerText = formatMoney(0);
+    listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); margin: auto;">Your cart is empty. Add components or prebuilts!</div>';
+    if (regTotalEl) regTotalEl.innerText = formatMoney(0);
+    if (transferTotalEl) transferTotalEl.innerText = formatMoney(0);
     return;
   }
 
-  let subtotal = 0;
-  list.innerHTML = state.cart.map((item, idx) => {
-    subtotal += item.price;
-    return `
-      <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-color);">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="${item.image}" style="width: 40px; height: 40px; object-fit: contain;">
-          <div>
-            <div style="font-weight: 700; font-size: 12px; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.name}</div>
-            <div style="font-size: 12px; font-weight: 800; color: var(--primary-color);">${formatMoney(item.price)}</div>
-          </div>
-        </div>
-        <button style="background: none; border: none; color: var(--accent-red); cursor: pointer; font-size: 14px;" onclick="removeFromCart(${idx})">✕</button>
-      </div>
-    `;
-  }).join('');
-
+  let subtotal = state.cart.reduce((sum, item) => sum + (item.price || item.price_usd || 0), 0);
   let discount = 0;
+
   if (state.appliedCoupon) {
-    if (state.appliedCoupon.type === 'percent') {
-      discount = subtotal * (state.appliedCoupon.discount / 100);
-    } else {
-      discount = state.appliedCoupon.discount;
-    }
+    if (state.appliedCoupon.discount) discount = subtotal * state.appliedCoupon.discount;
+    if (state.appliedCoupon.fixed) discount = state.appliedCoupon.fixed;
   }
 
-  const total = Math.max(0, subtotal - discount);
+  const finalTotal = Math.max(0, subtotal - discount);
+  const transferTotal = finalTotal * (1 - (state.config.transfer_discount / 100));
 
-  if (subtotalEl) subtotalEl.innerText = formatMoney(subtotal);
-  if (discountEl) discountEl.innerText = `-${formatMoney(discount)}`;
-  if (totalEl) totalEl.innerText = formatMoney(total);
+  listEl.innerHTML = state.cart.map((item, idx) => `
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--bg-base); border-radius: 8px; border: 1px solid var(--border-color);">
+      <div>
+        <div style="font-weight: 700; font-size: 12px;">${item.name}</div>
+        <div class="font-mono" style="font-weight: 800; font-size: 13px; color: var(--primary-color);">${formatMoney(item.price || item.price_usd)}</div>
+      </div>
+      <button onclick="removeFromCart(${idx})" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 6px; color: var(--accent-red); padding: 4px 8px; cursor: pointer;">
+        ✕
+      </button>
+    </div>
+  `).join('');
+
+  if (regTotalEl) regTotalEl.innerText = formatMoney(finalTotal);
+  if (transferTotalEl) transferTotalEl.innerText = formatMoney(transferTotal);
 }
 
-// --- 7. Quick Customizer Drawer (Live Theme & Color Editor) ---
-function toggleCustomizer() {
-  const el = document.getElementById('customizer-drawer');
-  el.classList.toggle('open');
+function checkoutWhatsApp() {
+  const subtotal = state.cart.reduce((sum, item) => sum + (item.price || item.price_usd || 0), 0);
+  const msg = `Hello ${state.config.store_name}, I want to place an order for ${state.cart.length} items totaling ${formatMoney(subtotal)}.`;
+  window.open(`https://wa.me/18005550199?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-function applyCustomPreset(prim, sec, headBg) {
-  document.getElementById('cust-primary-color').value = prim;
-  document.getElementById('cust-secondary-color').value = sec;
-  document.getElementById('cust-header-bg').value = headBg;
-  saveCustomizerSettings();
+// --- 7. Live Customizer Drawer ---
+function openCustomizerDrawer() {
+  document.getElementById('live-customizer-drawer').classList.add('open');
 }
 
-function saveCustomizerSettings() {
-  const storeName = document.getElementById('cust-store-name').value || 'COMPUTER HOUSE';
-  const primaryColor = document.getElementById('cust-primary-color').value || '#FF3E00';
-  const secondaryColor = document.getElementById('cust-secondary-color').value || '#2563EB';
-  const headerBg = document.getElementById('cust-header-bg').value || '#000000';
-  const announcement = document.getElementById('cust-announcement-text').value;
-  const whatsapp = document.getElementById('cust-whatsapp').value;
-
-  state.saveConfig({
-    store_name: storeName,
-    primary_color: primaryColor,
-    secondary_color: secondaryColor,
-    header_bg: headerBg,
-    announcement_text: announcement,
-    whatsapp_number: whatsapp
-  });
-
-  // Apply instantly
-  document.getElementById('header-store-title').innerText = storeName;
-  document.getElementById('announcement-banner-text').innerText = announcement;
-  renderHome();
+function closeCustomizerDrawer() {
+  document.getElementById('live-customizer-drawer').classList.remove('open');
 }
 
-// --- 8. Theme & Language Controls ---
+function updateStoreName(val) {
+  state.config.store_name = val;
+  document.getElementById('header-store-title').innerText = val;
+}
+
+function updatePrimaryColor(color) {
+  state.config.primary_color = color;
+  state.applyThemeVars();
+}
+
+function updateAnnouncementText(val) {
+  state.config.announcement_text = val;
+  document.getElementById('announcement-banner-text').innerText = val;
+}
+
+function updateHeroTitle(val) {
+  state.config.hero_title = val;
+  const el = document.getElementById('hero-title-text');
+  if (el) el.innerText = val;
+}
+
+function updateFloatingText(val) {
+  state.config.floating_bar_text = val;
+  const el = document.getElementById('floating-bar-text-span');
+  if (el) el.innerText = val;
+}
+
+function saveCustomizerToStorage() {
+  localStorage.setItem('ch_light_config', JSON.stringify(state.config));
+  alert('✓ Store customizer settings saved successfully to browser storage!');
+  closeCustomizerDrawer();
+}
+
+// --- 8. Theme & Currency Controls ---
 function toggleDarkLight() {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'dark' ? 'light' : 'dark';
@@ -753,53 +749,41 @@ function toggleDarkLight() {
 
 function changeCurrency(curr) {
   state.currency = curr;
-  document.getElementById('header-currency-label').innerText = curr;
   renderHome();
   if (state.activeView === 'catalog') renderCatalog();
   if (state.activeView === 'builder') renderPCBuilder();
   if (state.activeView === 'prebuilts') renderPrebuiltsView();
   renderCartDrawer();
+  updateCartBadge();
 }
 
-function toggleWhatsAppModal() {
-  document.getElementById('whatsapp-popup-card').classList.toggle('open');
-}
-
-// --- 9. Initialization on Page Load ---
+// --- 9. Initialization ---
 window.addEventListener('DOMContentLoaded', () => {
-  // Restore saved theme
   const savedTheme = localStorage.getItem('ch_light_theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
-  // Apply saved config
   state.applyThemeVars();
   document.getElementById('header-store-title').innerText = state.config.store_name;
   document.getElementById('announcement-banner-text').innerText = state.config.announcement_text;
-  document.getElementById('cust-store-name').value = state.config.store_name;
-  document.getElementById('cust-primary-color').value = state.config.primary_color;
-  document.getElementById('cust-secondary-color').value = state.config.secondary_color;
-  document.getElementById('cust-header-bg').value = state.config.header_bg;
-  document.getElementById('cust-announcement-text').value = state.config.announcement_text;
-  document.getElementById('cust-whatsapp').value = state.config.whatsapp_number;
 
   updateCartBadge();
   renderHome();
 
-  // Search input live listener
+  // Search input listener
   const searchInput = document.getElementById('main-search-input');
   const searchDropdown = document.getElementById('search-dropdown-results');
   if (searchInput && searchDropdown) {
     searchInput.addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) {
-        searchDropdown.classList.remove('active');
+        searchDropdown.style.display = 'none';
         return;
       }
       const matches = state.products.filter(p => p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q));
       if (matches.length > 0) {
-        searchDropdown.classList.add('active');
+        searchDropdown.style.display = 'block';
         searchDropdown.innerHTML = matches.map(m => `
-          <div class="search-result-item" onclick="addToCart({ name: '${m.name}', price: ${m.price_usd}, image: '${m.image}' }); document.getElementById('search-dropdown-results').classList.remove('active');">
+          <div class="search-result-item" onclick="addToCart({ name: '${m.name}', price: ${m.price_usd}, image: '${m.image}' }); document.getElementById('search-dropdown-results').style.display='none';">
             <img src="${m.image}" style="width: 32px; height: 32px; object-fit: contain;">
             <div>
               <div style="font-weight: 700; font-size: 12px;">${m.name}</div>
@@ -808,13 +792,13 @@ window.addEventListener('DOMContentLoaded', () => {
           </div>
         `).join('');
       } else {
-        searchDropdown.classList.remove('active');
+        searchDropdown.style.display = 'none';
       }
     });
 
     document.addEventListener('click', (e) => {
       if (!searchInput.contains(e.target)) {
-        searchDropdown.classList.remove('active');
+        searchDropdown.style.display = 'none';
       }
     });
   }

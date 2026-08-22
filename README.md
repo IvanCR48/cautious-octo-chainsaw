@@ -1,36 +1,35 @@
 # ⚡ Computer House — Demo Light (Zero-SQL / Standalone Edition)
 
-This folder contains a **Lightweight / Standalone** version of **Computer House**. It is engineered to run seamlessly with zero dependencies, requiring no Node.js, npm, Supabase, MySQL, or backend SQL database.
+This folder contains the **Lightweight / Standalone** version of **Computer House**, entirely translated into English. It is engineered to run seamlessly with zero dependencies, requiring no Node.js, npm, Supabase, MySQL, or backend SQL database.
 
 ---
 
 ## 🌟 Key Features of the Demo Light Version
 
-1. **Identical High-End Modern Visual Aesthetics**:
-   - Sticky header with category navigation and live predictive search bar.
-   - Dynamic announcement top bar with customizable promo message.
-   - Hero Carousel with interactive direct action buttons.
-   - Category Quick Grid with custom status badges.
-   - Bento Grid featuring the build of the week and direct links to PC Builder and Tech RMA workshop.
-   - Battle-Ready Prebuilt Gaming PCs showcase with 12 installment breakdown.
-   - Social Proof customer reviews with star ratings.
-   - Live RMA Warranty & Repair order tracking (`CH-8492`).
-   - Slide-out Shopping Cart with coupon engine (`GAMER10`, `WELCOME50`) and bank transfer discount.
-   - Floating Multi-Agent WhatsApp widget with segmented contact channels.
+1. **Contemporary Gaming Retail E-Commerce Design System**:
+   - **Fixed Sticky Header**: Left-locked logo, wide rounded predictive search input, and right action cluster (USD/PEN switcher, Dark/Light mode, Cart drawer).
+   - **Horizontal Primary Navigation Bar**: Direct text links for *Products, Notebooks, Sale Gamer, Build Your PC, Outlet Deals, Tech Support & RMA*.
+   - **Hero Promotional Banner with 3D Circular Platform Staging**: Left-side multi-line bold headline with vertical promotional badges, and right-side staged product composition (Gaming Laptop + Headset + RTX GPU) resting on layered circular platforms with ambient glow.
+   - **Featured Catalog with Pill-Style Tabs & Carousel Arrows**: Centered section header with page/row arrows (`‹ 1 / 3 ›`) and smooth horizontal pill tabs (`All Hardware`, `Graphics Cards`, `Processors`, `Motherboards`, `RAM Memory`, `Storage`, `Laptops`, `Peripherals`, `Coolers`, `Power Supplies`, `Cases`).
+   - **Product Card Anatomy**: Brand tag, clamped title, strikethrough list price, large bold discounted price, green absolute savings badge (*Save $...*), and one-click add to cart.
+   - **Floating Bottom Notification Bar**: Non-intrusive site update announcement with direct action button (*"Try Builder →"*).
+   - **Battle-Ready Prebuilt Gaming PCs**: 4-column responsive grid with hardware spec breakdowns and installment calculations.
+   - **Live RMA Warranty & Repair Order Tracking**: Real-time 5-stage laboratory tracker (search code: `CH-8492`).
+   - **Slide-out Shopping Cart**: Coupon engine (`GAMER10`, `WELCOME50`), 15% bank transfer discount, and WhatsApp checkout integration.
 
-2. **Zero-Backend & Zero-SQL Architecture**:
-   - Runs 100% in the client browser using modern Vanilla JavaScript and `localStorage`.
-   - Open it directly by double-clicking `index.html` or upload to any static hosting service (GitHub Pages, Netlify, Vercel, cPanel, Apache).
+2. **⚙️ In-Browser Live Store Customizer**:
+   - Click the **"🎨 Edit Store"** button in the header.
+   - Live-tweak the store title, primary accent color (Orange, Blue, Green, or custom color picker), top announcement bar text, hero headline, and floating notification message.
+   - Changes apply immediately and persist in browser `localStorage`.
 
-3. **⚙️ In-Browser Live Store Customizer**:
-   - Click the floating **"⚙️ Customize Store"** button in the bottom-left corner.
-   - Easily modify the store title, color themes (Gamer Orange, Electric Blue, Razer Green, Cyberpunk, or custom hex colors), top banner text, and WhatsApp support phone number.
-   - Changes update the UI immediately and persist automatically in browser `localStorage`.
-
-4. **⚡ Interactive PC Builder with Hardware Validation**:
+3. **⚡ Interactive PC Builder with Hardware Validation**:
    - Real-time CPU & Motherboard socket compatibility check (AM5 vs LGA1700).
-   - Estimated thermal wattage calculation and automatic minimum power supply recommendation.
-   - Direct addition of complete custom builds into the shopping cart.
+   - Live estimated thermal wattage calculation and power meter.
+   - 1-click addition of complete custom builds into the shopping cart.
+
+4. **Zero-Backend & Zero-SQL Architecture**:
+   - Runs 100% in the client browser using modern Vanilla JavaScript, CSS, and HTML5.
+   - Open it directly by double-clicking `index.html` or upload to any static hosting service (GitHub Pages, Netlify, Vercel, cPanel, Cloudflare Pages, Apache).
 
 ---
 
