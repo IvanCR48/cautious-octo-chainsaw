@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer House — Standalone Gaming Retail Demo (Zero-SQL)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- 1. Top Announcement Promo Bar -->
+  <div class="top-announcement" id="top-announcement-bar">
+    <span id="announcement-banner-text">🚀 FREE NATIONWIDE SHIPPING ON ORDERS OVER $300 • 3 & 6 INTEREST-FREE
+      INSTALLMENTS • 15% OFF VIA BANK TRANSFER</span>
+  </div>
+
+  <!-- 2. Header & Sticky Navigation -->
+  <header class="header-wrapper">
+    <!-- Main Header Bar -->
+    <div class="header-main">
+      <div class="container header-main-flex">
+        <!-- Brand Logo -->
+        <div class="logo-text" onclick="navigateTo('home')">
+          <span style="color: var(--primary-color);">⚡</span>
+          <span id="header-store-title">COMPUTER HOUSE</span>
+        </div>
+
+        <!-- Predictive Search Bar -->
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="main-search-input" class="search-input"
+            placeholder="Search RTX 4080, Ryzen 7, ASUS B650, RAM Memory...">
+          <div id="search-dropdown-results" class="search-results-dropdown"></div>
+        </div>
+
+        <!-- Action Controls -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <!-- Currency Switcher -->
+          <div style="display: flex; gap: 4px;">
+            <button class="btn-icon" onclick="changeCurrency('USD')">USD ($)</button>
+            <button class="btn-icon" onclick="changeCurrency('PEN')">PEN (S/.)</button>
+          </div>
+
+          <!-- Dark / Light Mode Toggle -->
+          <button class="btn-icon" onclick="toggleDarkLight()" title="Dark / Light Mode">
+            🌙 / ☀️
+          </button>
+
+          <!-- In-Browser Customizer Button -->
+          <button class="btn-icon" onclick="openCustomizerDrawer()" title="Live Theme Customizer"
+            style="background: rgba(255, 62, 0, 0.1); color: var(--primary-color); border-color: var(--primary-color);">
+            🎨 Edit Store
+          </button>
+
+          <!-- Admin CMS Dashboard Button -->
+          <button class="btn-icon" onclick="navigateTo('admin')" title="Admin CMS Dashboard"
+            style="background: rgba(37, 99, 235, 0.1); color: var(--secondary-color); border-color: var(--secondary-color); font-weight: 700;">
+            📊 Admin CMS
+          </button>
+
+          <!-- Shopping Cart Button -->
+          <button class="btn-primary" onclick="openCartDrawer()"
+            style="padding: 8px 14px; border-radius: var(--radius-pill);">
+            <span id="header-cart-total" style="font-weight: 800; font-family: var(--font-mono);">$0</span>
+            <span>🛒</span>
+            <span id="header-cart-count"
+              style="background: #FFFFFF; color: var(--primary-color); padding: 1px 6px; border-radius: 10px; font-size: 10px; font-weight: 800;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Primary Horizontal Navigation Bar -->
+    <div class="header-primary-nav">
+      <div class="container header-primary-nav-flex">
+        <!-- Categories Trigger -->
+        <button class="btn-secondary" onclick="navigateTo('catalog', 'all')"
+          style="padding: 5px 12px; font-size: 12px; border-radius: var(--radius-pill);">
+          ☰ All Categories
+        </button>
+
+        <!-- Horizontal Text Links -->
+        <nav class="nav-links-row">
+          <button class="nav-link-btn active" onclick="navigateTo('catalog', 'all')">🏷️ Products</button>
+          <button class="nav-link-btn" onclick="navigateTo('catalog', 'notebooks')">💻 Notebooks</button>
+          <button class="nav-link-btn" onclick="navigateTo('prebuilts')"
+            style="color: var(--primary-color); font-weight: 800;">✨ Sale Gamer</button>
+          <button class="nav-link-btn" onclick="navigateTo('builder')">⚙️ Build Your PC</button>
+          <button class="nav-link-btn" onclick="navigateTo('catalog', 'storage')">📦 Outlet Deals</button>
+          <button class="nav-link-btn" onclick="navigateTo('services')">🔧 Tech Support & RMA</button>
+          <button class="nav-link-btn" onclick="navigateTo('admin')"
+            style="color: var(--secondary-color); font-weight: 800;">📊 Admin CMS</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Main Router Views -->
+  <main class="container" style="padding-top: 10px; min-height: 80vh;">
+
+    <!-- VIEW A: HOME -->
+    <section id="view-home">
+      <!-- Dual-Pane Hero Layout: Categories PRO Sidebar + Promotional 3D Banner -->
+      <div class="hero-dual-pane">
+        <!-- Left: Categories PRO Sidebar Menu -->
+        <aside class="hero-cat-sidebar">
+          <div class="hero-cat-sidebar-header">
+            <span style="color: var(--primary-color);">📁</span>
+            <span>PRO HARDWARE DEPARTMENTS</span>
+          </div>
+          <ul class="hero-cat-list">
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'notebooks')">
+              <span class="cat-item-left"><span class="cat-icon">💻</span> Notebooks Pro</span>
+              <span class="cat-count-badge">18</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('prebuilts')">
+              <span class="cat-item-left"><span class="cat-icon">⚡</span> Prebuilt Gaming PCs</span>
+              <span class="cat-count-badge">12</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'gpu')">
+              <span class="cat-item-left"><span class="cat-icon">🎮</span> Graphics Cards (GPU)</span>
+              <span class="cat-count-badge">24</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'cpu')">
+              <span class="cat-item-left"><span class="cat-icon">🧠</span> Processors (CPU)</span>
+              <span class="cat-count-badge">16</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'motherboard')">
+              <span class="cat-item-left"><span class="cat-icon">🔌</span> Motherboards</span>
+              <span class="cat-count-badge">14</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'ram')">
+              <span class="cat-item-left"><span class="cat-icon">💾</span> RAM & SSD Storage</span>
+              <span class="cat-count-badge">22</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'cooler')">
+              <span class="cat-item-left"><span class="cat-icon">🧊</span> Cooling & Liquid</span>
+              <span class="cat-count-badge">10</span>
+            </li>
+            <li class="hero-cat-item" onclick="navigateTo('catalog', 'perifericos')">
+              <span class="cat-item-left"><span class="cat-icon">⌨️</span> Peripherals & Gear</span>
+              <span class="cat-count-badge">35</span>
+            </li>
+          </ul>
+          <div class="hero-cat-footer" onclick="navigateTo('catalog', 'all')">
+            <span>Explore All 150+ Products</span>
+            <span>→</span>
+          </div>
+        </aside>
+
+        <!-- Right: Promotional 3D Banner -->
+        <div class="hero-main-banner" id="hero-carousel-slide">
+          <div class="hero-banner-content">
+            <span class="hero-badge">🔥 MONTHLY SPECIALS • UP TO 12 INSTALLMENTS</span>
+            <h1 class="hero-title" id="hero-title-text">BUILD YOUR DREAM PC WITH TOP-TIER HARDWARE</h1>
+            <p class="hero-subtitle" id="hero-subtitle-text">100% original components with official warranty. Live
+              socket compatibility validation and thermal wattage calculation.</p>
+
+            <div class="hero-badges-vertical">
+              <div class="hero-badge-v-item">
+                <div class="hero-badge-circle">⚡</div>
+                <span>Automatic Socket Compatibility (AM5 & LGA1700)</span>
+              </div>
+              <div class="hero-badge-v-item">
+                <div class="hero-badge-circle">🛡️</div>
+                <span>Official Brand Warranty & Professional Assembly</span>
+              </div>
+              <div class="hero-badge-v-item">
+                <div class="hero-badge-circle">💳</div>
+                <span>15% Off via Bank Transfer • 3 & 6 Zero-Interest Installments</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px;">
+              <button class="btn-primary" onclick="navigateTo('builder')">Build Your PC Now →</button>
+              <button class="btn-secondary"
+                style="background: rgba(255,255,255,0.12); color: #FFFFFF; border-color: rgba(255,255,255,0.25);"
+                onclick="navigateTo('prebuilts')">Explore Gaming PCs</button>
+            </div>
+          </div>
+
+          <!-- Staged 3D Product Composition on Circular Platforms -->
+          <div class="hero-staged-composition">
+            <div class="platform-large"></div>
+            <div class="platform-medium"></div>
+            <div class="platform-glow"></div>
+
+            <div class="staged-center">
+              <img src="img/hero-grid/Notebook/Example.jpg" alt="Gaming Laptop">
+            </div>
+            <div class="staged-left">
+              <img src="img/hero-grid/Periferic/Example.jpg" alt="Headset">
+            </div>
+            <div class="staged-right">
+              <img src="img/hero-grid/GPU/Example.jpg" alt="RTX GPU">
+            </div>
+
+            <div class="floating-quality-badge">
+              🛡️ PRO GAMING GEAR
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Pastel Category Pill Cards Strip -->
+      <div class="hero-pastel-strip">
+        <div class="pastel-card pastel-blue" onclick="navigateTo('catalog', 'notebooks')">
+          <div class="pastel-icon-box">💻</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">18 MODELS</span>
+            <h4 class="pastel-title">Notebooks Pro</h4>
+          </div>
+        </div>
+        <div class="pastel-card pastel-amber" onclick="navigateTo('prebuilts')">
+          <div class="pastel-icon-box">⚡</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">12 BUILDS</span>
+            <h4 class="pastel-title">Battle Rigs</h4>
+          </div>
+        </div>
+        <div class="pastel-card pastel-green" onclick="navigateTo('catalog', 'gpu')">
+          <div class="pastel-icon-box">🎮</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">24 MODELS</span>
+            <h4 class="pastel-title">Graphics Cards</h4>
+          </div>
+        </div>
+        <div class="pastel-card pastel-purple" onclick="navigateTo('catalog', 'cpu')">
+          <div class="pastel-icon-box">🧠</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">16 MODELS</span>
+            <h4 class="pastel-title">CPUs & APUs</h4>
+          </div>
+        </div>
+        <div class="pastel-card pastel-teal" onclick="navigateTo('catalog', 'motherboard')">
+          <div class="pastel-icon-box">🔌</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">36 MODELS</span>
+            <h4 class="pastel-title">Mothers & RAM</h4>
+          </div>
+        </div>
+        <div class="pastel-card pastel-rose" onclick="navigateTo('catalog', 'perifericos')">
+          <div class="pastel-icon-box">⌨️</div>
+          <div class="pastel-info">
+            <span class="pastel-tag">35 ITEMS</span>
+            <h4 class="pastel-title">Gear & Setup</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Trust Badges Strip -->
+      <div class="trust-badges-strip">
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">⚡</div>
+          <div>
+            <div class="trust-badge-title">Express Shipping</div>
+            <div class="trust-badge-desc">Nationwide 24-48h Delivery</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🛡️</div>
+          <div>
+            <div class="trust-badge-title">Official Warranty</div>
+            <div class="trust-badge-desc">1 to 3 Years Factory Cover</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">💳</div>
+          <div>
+            <div class="trust-badge-title">Flexible Payments</div>
+            <div class="trust-badge-desc">Up to 12 Installments & 15% Transfer</div>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <div class="trust-badge-icon">🔧</div>
+          <div>
+            <div class="trust-badge-title">Expert RMA Lab</div>
+            <div class="trust-badge-desc">Diagnostic & Bench Testing</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Hardware Catalog Section with Pill Tabs & Carousel Arrows -->
+      <section style="margin: 40px 0;">
+        <div class="section-header-centered">
+          <div class="section-top-badge">✨ TOP HARDWARE CATALOG</div>
+          <h2 style="font-size: 28px; font-weight: 800;">Featured Products & Components</h2>
+          <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">Original hardware with official
+            factory warranty. 100% verified stock with nationwide delivery.</p>
+
+          <!-- Carousel Controls -->
+          <div class="section-carousel-nav">
+            <button class="carousel-btn" onclick="prevCatalogPage()">‹</button>
+            <span id="demo-catalog-page-indicator"
+              style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--text-muted);">1 /
+              3</span>
+            <button class="carousel-btn" onclick="nextCatalogPage()">›</button>
+          </div>
+        </div>
+
+        <!-- Horizontal Pill Category Tabs Bar -->
+        <div class="category-pill-tab-bar" id="home-category-pills">
+          <button class="category-pill-tab active" onclick="filterCatalogPill('all', this)">All Hardware</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('gpu', this)">Graphics Cards</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('cpu', this)">Processors</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('motherboard', this)">Motherboards</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('ram', this)">RAM Memory</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('storage', this)">Storage (SSDs)</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('notebooks', this)">Laptops</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('perifericos', this)">Peripherals</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('cooler', this)">Coolers & Liquid</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('psu', this)">Power Supplies</button>
+          <button class="category-pill-tab" onclick="filterCatalogPill('case', this)">Cases & Chassis</button>
+        </div>
+
+        <!-- 4-Column Product Grid -->
+        <div class="product-grid-4" id="home-featured-products-grid" style="margin-top: 24px;"></div>
+      </section>
+    </section>
+
+    <!-- VIEW B: CATALOG -->
+    <section id="view-catalog" style="display: none;">
+      <div class="section-header-centered" style="margin: 20px 0 24px 0;">
+        <h2 style="font-size: 28px; font-weight: 800;" id="catalog-current-category-title">All Hardware Components</h2>
+        <p style="color: var(--text-secondary); font-size: 14px;">Select a category or filter to find compatible
+          components.</p>
+      </div>
+
+      <div class="category-pill-tab-bar" style="margin-bottom: 24px;">
+        <button class="category-pill-tab active" onclick="renderCatalog('all')">All</button>
+        <button class="category-pill-tab" onclick="renderCatalog('gpu')">GPUs</button>
+        <button class="category-pill-tab" onclick="renderCatalog('cpu')">CPUs</button>
+        <button class="category-pill-tab" onclick="renderCatalog('motherboard')">Mothers</button>
+        <button class="category-pill-tab" onclick="renderCatalog('ram')">RAM</button>
+        <button class="category-pill-tab" onclick="renderCatalog('storage')">SSD</button>
+        <button class="category-pill-tab" onclick="renderCatalog('notebooks')">Laptops</button>
+        <button class="category-pill-tab" onclick="renderCatalog('perifericos')">Peripherals</button>
+      </div>
+
+      <div class="product-grid-4" id="catalog-products-grid"></div>
+    </section>
+
+    <!-- VIEW C: PREBUILTS -->
+    <section id="view-prebuilts" style="display: none;">
+      <div class="section-header-centered" style="margin: 20px 0 24px 0;">
+        <div class="section-top-badge">⚡ OFFICIAL PRECONFIGURED BUILDS</div>
+        <h2 style="font-size: 28px; font-weight: 800;">Battle-Ready Gaming PCs</h2>
+        <p style="color: var(--text-secondary); font-size: 14px;">100% Assembled & Stress-Tested in Live Laboratory.
+          Immediate Nationwide Dispatch.</p>
+      </div>
+      <div class="product-grid-4" id="prebuilts-products-grid"></div>
+    </section>
+
+    <!-- VIEW D: PC BUILDER -->
+    <section id="view-builder" style="display: none;">
+      <div class="builder-step-header">
+        <div>
+          <span
+            style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--primary-color);">ADVANCED
+            CONFIGURATOR 2.0</span>
+          <h2 style="font-size: 24px; font-weight: 800;" id="builder-step-title">Interactive Custom PC Builder</h2>
+          <p style="color: var(--text-secondary); font-size: 13px; margin-top: 2px;">Live hardware socket compatibility
+            validation & automated thermal wattage calculation.</p>
+        </div>
+
+        <div class="watt-meter-box">
+          <span style="font-size: 20px;">⚡</span>
+          <div>
+            <div style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+              Estimated Consumption</div>
+            <div class="font-mono" style="font-size: 16px; font-weight: 800; color: var(--primary-color);"
+              id="builder-total-watts">120 W</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Column PC Builder Architecture -->
+      <div class="builder-3col-grid">
+        <!-- Col 1: Stepper Navigation Sidebar -->
+        <aside class="builder-stepper-sidebar">
+          <div class="stepper-sidebar-header">
+            <span>⚙️</span>
+            <span>BUILD PHASES (8)</span>
+          </div>
+          <div class="builder-stepper-list" id="builder-stepper-list">
+            <!-- Dynamically populated by renderPCBuilder() -->
+          </div>
+        </aside>
+
+        <!-- Col 2: Active Step Component Selection -->
+        <main class="builder-selection-col">
+          <div class="builder-step-instructions">
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <h3 style="font-size: 16px; font-weight: 800;" id="builder-step-current-name">Step 1: Processor (CPU)</h3>
+              <span class="builder-step-badge" id="builder-socket-rule-badge">Socket Rule: ALL AVAILABLE</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary);" id="builder-step-desc">
+              Select your CPU first. The system will automatically filter motherboards by socket (AM5 / LGA1700) to
+              ensure zero incompatibility.
+            </p>
+          </div>
+
+          <!-- Component Selection Cards Grid -->
+          <div class="builder-components-grid" id="builder-components-selection-grid"></div>
+        </main>
+
+        <!-- Col 3: Sticky Rig Compatibility & Wattage HUD -->
+        <aside class="builder-sticky-hud">
+          <div class="hud-header">
+            <span>🖥️</span>
+            <span>RIG COMPATIBILITY HUD</span>
+          </div>
+
+          <!-- Live Socket Status Card -->
+          <div class="hud-socket-box">
+            <div style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+              Motherboard Socket Target</div>
+            <div class="hud-socket-val" id="builder-active-socket">NONE (SELECT CPU)</div>
+            <div class="hud-socket-status" id="builder-socket-status-text">✓ Socket validation ready</div>
+          </div>
+
+          <!-- Wattage Gauge Meter -->
+          <div class="hud-power-gauge">
+            <div
+              style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; margin-bottom: 6px;">
+              <span>System Power Load</span>
+              <span id="builder-power-percent" class="font-mono" style="color: var(--primary-color);">14% (120W /
+                850W)</span>
+            </div>
+            <div class="hud-gauge-bar-track">
+              <div class="hud-gauge-bar-fill" id="builder-power-bar" style="width: 14%;"></div>
+            </div>
+            <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Recommended PSU: 750W+ 80 Plus Gold
+            </div>
+          </div>
+
+          <!-- Selected Components Summary List -->
+          <div class="hud-summary-list" id="builder-hud-summary-list">
+            <!-- Dynamically populated with all 8 slots -->
+          </div>
+
+          <!-- Price & Add Rig Button -->
+          <div class="hud-footer">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <span style="font-size: 12px; color: var(--text-secondary);">Total (Regular):</span>
+              <span class="font-mono" style="font-size: 18px; font-weight: 800;" id="builder-total-price">$0</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <span style="font-size: 11px; color: var(--accent-green); font-weight: 700;">Transfer (-15%):</span>
+              <span class="font-mono" style="font-size: 15px; font-weight: 800; color: var(--accent-green);"
+                id="builder-transfer-price">$0</span>
+            </div>
+            <button class="btn-primary" style="width: 100%; padding: 12px; font-size: 13px; font-weight: 800;"
+              onclick="finishPCBuild()">
+              🛒 Add Full Rig to Cart
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VIEW E: REPAIR RMA TRACKER -->
+    <section id="view-services" style="display: none;">
+      <div class="section-header-centered" style="margin: 20px 0 24px 0;">
+        <div class="section-top-badge">🔧 LIVE RMA TRACKER</div>
+        <h2 style="font-size: 28px; font-weight: 800;">Specialized Workshop & Repair Tracking</h2>
+        <p style="color: var(--text-secondary); font-size: 14px;">Enter your service code (e.g.
+          <strong>CH-8492</strong>) to inspect live lab progress.</p>
+      </div>
+
+      <div class="card" style="max-width: 600px; margin: 0 auto 32px auto;">
+        <form onsubmit="searchRepairTicket(event)" style="display: flex; gap: 8px;">
+          <input type="text" id="rma-search-code-input" class="search-input"
+            placeholder="Enter RMA Code (e.g. CH-8492)..." value="CH-8492" required>
+          <button type="submit" class="btn-primary" style="white-space: nowrap;">Track Status</button>
+        </form>
+      </div>
+
+      <div id="rma-ticket-result-box" style="max-width: 800px; margin: 0 auto;"></div>
+    </section>
+
+    <!-- VIEW F: ADMIN CMS DASHBOARD -->
+    <section id="view-admin" style="display: none;">
+      <div class="admin-dashboard-container">
+        <!-- Admin Graphite Sidebar -->
+        <aside class="admin-sidebar">
+          <div class="admin-sidebar-brand">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: var(--primary-color); font-size: 20px;">⚡</span>
+              <div>
+                <div style="font-size: 14px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em;">COMPUTER HOUSE
+                </div>
+                <div style="font-size: 10px; color: #94A3B8; font-family: var(--font-mono);">STOREFRONT CMS PRO</div>
+              </div>
+            </div>
+            <div class="admin-status-online">
+              <span class="online-dot"></span> LIVE ENGINE
+            </div>
+          </div>
+
+          <nav class="admin-nav-menu">
+            <div class="admin-nav-section-title">MANAGEMENT</div>
+            <button class="admin-nav-item active" onclick="switchAdminTab('overview')">
+              <span>📊</span> Overview & Metrics
+            </button>
+            <button class="admin-nav-item" onclick="switchAdminTab('inventory')">
+              <span>📦</span> Inventory Products
+            </button>
+            <button class="admin-nav-item" onclick="switchAdminTab('orders')">
+              <span>💳</span> Orders & Revenue
+            </button>
+            <button class="admin-nav-item" onclick="switchAdminTab('rma')">
+              <span>🔧</span> RMA Tech Bench
+            </button>
+
+            <div class="admin-nav-section-title" style="margin-top: 20px;">CONFIGURATION</div>
+            <button class="admin-nav-item" onclick="openCustomizerDrawer()">
+              <span>🎨</span> Theme & Branding
+            </button>
+            <button class="admin-nav-item" onclick="navigateTo('home')">
+              <span>🌐</span> Back to Storefront
+            </button>
+          </nav>
+
+          <div class="admin-sidebar-footer">
+            <div style="font-size: 11px; color: #94A3B8;">Zero-SQL Standalone Mode</div>
+            <div style="font-size: 10px; color: #64748B; margin-top: 2px;">LocalStorage Engine v2.0</div>
+          </div>
+        </aside>
+
+        <!-- Admin Main Content Area -->
+        <main class="admin-main-area">
+          <!-- Top Control Header Bar -->
+          <header class="admin-top-bar">
+            <div class="admin-top-search">
+              <span>🔍</span>
+              <input type="text" placeholder="Search inventory, SKUs, orders, customers..." id="admin-search-field"
+                oninput="filterAdminTable(this.value)">
+            </div>
+
+            <div class="admin-top-actions">
+              <!-- Live Notification Bell with Dropdown -->
+              <div class="admin-notif-wrapper">
+                <button class="admin-notif-btn" onclick="toggleAdminNotifTray()" title="System Notifications">
+                  🔔
+                  <span class="admin-notif-badge" id="admin-notif-badge-count">3</span>
+                </button>
+
+                <!-- Notification Dropdown Tray -->
+                <div class="admin-notif-tray" id="admin-notif-tray-dropdown">
+                  <div class="notif-tray-header">
+                    <span style="font-weight: 800; font-size: 13px;">Real-time Activity</span>
+                    <span style="font-size: 11px; color: var(--primary-color); font-weight: 700; cursor: pointer;"
+                      onclick="clearAdminNotifs()">Mark all read</span>
+                  </div>
+                  <div class="notif-tray-list" id="admin-notif-items-list">
+                    <!-- Real notifications populated by renderAdminCMS() -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Action Button -->
+              <button class="btn-primary" style="padding: 7px 14px; font-size: 12px;" onclick="promptAddProduct()">
+                + Add Product
+              </button>
+              <button class="btn-secondary" style="padding: 7px 14px; font-size: 12px;" onclick="navigateTo('home')">
+                View Store ↗
+              </button>
+            </div>
+          </header>
+
+          <!-- 3 Real KPI Stat Cards -->
+          <div class="admin-kpi-grid">
+            <div class="admin-kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">GROSS SALES (WEEKLY)</span>
+                <span class="kpi-icon-pill" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green);">📈
+                  +14.2%</span>
+              </div>
+              <div class="kpi-value font-mono" id="admin-kpi-sales">$2,303.00</div>
+              <div class="kpi-subtitle">Calculated from completed customer orders</div>
+            </div>
+
+            <div class="admin-kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">TOTAL STORE ORDERS</span>
+                <span class="kpi-icon-pill"
+                  style="background: rgba(37, 99, 235, 0.1); color: var(--secondary-color);">📦 14 Orders</span>
+              </div>
+              <div class="kpi-value font-mono" id="admin-kpi-orders">$1,101.00</div>
+              <div class="kpi-subtitle">Average ticket value: $78.60 USD</div>
+            </div>
+
+            <div class="admin-kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">RMA BENCH REPAIRS</span>
+                <span class="kpi-icon-pill" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber);">⚡ 8
+                  Fixed</span>
+              </div>
+              <div class="kpi-value font-mono" id="admin-kpi-rma">$900.00</div>
+              <div class="kpi-subtitle">Customer satisfaction rate: 99.4%</div>
+            </div>
+          </div>
+
+          <!-- Category Inventory Distribution Progress Meters -->
+          <div class="admin-section-card" style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h3 style="font-size: 15px; font-weight: 800;">Catalog Distribution by Component Class</h3>
+              <span style="font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);"
+                id="admin-total-catalog-count">10 Products Active</span>
+            </div>
+
+            <div class="admin-cat-dist-grid">
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px;">
+                  <span>Graphics Cards (GPU)</span>
+                  <span class="font-mono">38%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 38%; background: #3B82F6;"></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px;">
+                  <span>Processors (CPU)</span>
+                  <span class="font-mono">26%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 26%; background: #10B981;"></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px;">
+                  <span>Motherboards</span>
+                  <span class="font-mono">18%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 18%; background: #F59E0B;"></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px;">
+                  <span>Peripherals & Others</span>
+                  <span class="font-mono">18%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 18%; background: #EC4899;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Inventory Table -->
+          <div class="admin-section-card">
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 16px; font-weight: 800;">Real-Time Inventory Management</h3>
+                <p style="font-size: 12px; color: var(--text-secondary);">Direct stock adjustments & catalog controls
+                  saved to local browser database.</p>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-secondary" style="padding: 6px 12px; font-size: 11px;"
+                  onclick="resetInventoryDefaults()">
+                  ↺ Reset Catalog Defaults
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th style="width: 36px;"><input type="checkbox" id="admin-table-select-all"
+                        onclick="toggleSelectAllTable(this)"></th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Socket</th>
+                    <th>Wattage</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-inventory-table-body">
+                  <!-- Populated dynamically by renderAdminCMS() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 4. Floating Bottom Notification Bar -->
+  <div class="floating-bottom-bar" id="floating-notification-bar">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div
+        style="background-color: var(--primary-color); border-radius: 50%; padding: 4px; display: flex; align-items: center; justify-content: center;">
+        ✨
+      </div>
+      <span style="font-size: 12px; font-weight: 700; color: #FFFFFF;" id="floating-bar-text-span">
+        🔥 New PC Builder 2.0: Instant Socket Validation & Wattage Calculation
+      </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button class="btn-primary" style="padding: 6px 14px; font-size: 11px; border-radius: var(--radius-pill);"
+        onclick="navigateTo('builder')">
+        Try Builder →
+      </button>
+      <button onclick="document.getElementById('floating-notification-bar').style.display='none'"
+        style="background:none; border:none; color:#94A3B8; cursor:pointer; font-size: 14px;">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- 5. Cart Slide-out Drawer -->
+  <div class="cart-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div
+        style="padding: 16px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-size: 16px; font-weight: 800;">SHOPPING CART</h3>
+        <button onclick="closeCartDrawer()"
+          style="background: none; border: none; font-size: 18px; cursor: pointer;">✕</button>
+      </div>
+
+      <div id="cart-items-list"
+        style="flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;"></div>
+
+      <div style="padding: 16px; border-top: 1px solid var(--border-color); background: var(--bg-base);">
+        <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+          <input type="text" id="cart-coupon-input" placeholder="COUPON (GAMER10)" class="search-input"
+            style="text-transform: uppercase;">
+          <button class="btn-primary" onclick="applyCouponCode()">Apply</button>
+        </div>
+        <div id="coupon-feedback-msg" style="font-size: 11px; font-weight: 700; margin-bottom: 8px;"></div>
+
+        <div
+          style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 11px; color: var(--accent-green); font-weight: 700;">💵 BANK TRANSFER (15%
+            OFF):</span>
+          <span class="font-mono" style="font-size: 18px; color: var(--accent-green); font-weight: 800;"
+            id="cart-transfer-total">$0</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 13px; color: var(--text-secondary);">Total (Credit / Installments):</span>
+          <span class="font-mono" style="font-size: 22px; font-weight: 800;" id="cart-regular-total">$0</span>
+        </div>
+
+        <button class="btn-primary" style="width: 100%; padding: 14px; font-size: 14px;" onclick="checkoutWhatsApp()">
+          💬 Checkout via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. In-Browser Live Theme Customizer Drawer -->
+  <div class="customizer-drawer" id="live-customizer-drawer">
+    <div
+      style="padding: 16px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+      <h3 style="font-size: 16px; font-weight: 800;">🎨 Live Store Customizer</h3>
+      <button onclick="closeCustomizerDrawer()"
+        style="background: none; border: none; font-size: 18px; cursor: pointer;">✕</button>
+    </div>
+
+    <div style="padding: 16px; flex: 1; overflow-y: auto;">
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">Store Name:</label>
+        <input type="text" id="customizer-store-name" class="search-input" value="COMPUTER HOUSE"
+          oninput="updateStoreName(this.value)">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">Primary Accent
+          Color:</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="color" id="customizer-primary-color" value="#FF3E00" onchange="updatePrimaryColor(this.value)"
+            style="width: 50px; height: 36px; border: none; cursor: pointer; border-radius: 4px;">
+          <button class="btn-secondary" onclick="updatePrimaryColor('#FF3E00')">Orange</button>
+          <button class="btn-secondary" onclick="updatePrimaryColor('#2563EB')">Blue</button>
+          <button class="btn-secondary" onclick="updatePrimaryColor('#10B981')">Green</button>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">Top Announcement
+          Bar:</label>
+        <input type="text" id="customizer-announcement" class="search-input"
+          value="🚀 FREE NATIONWIDE SHIPPING ON ORDERS OVER $300 • 15% OFF TRANSFER"
+          oninput="updateAnnouncementText(this.value)">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">Hero Headline:</label>
+        <input type="text" id="customizer-hero-title" class="search-input"
+          value="BUILD YOUR DREAM PC WITH TOP-TIER HARDWARE" oninput="updateHeroTitle(this.value)">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">Floating Bar
+          Message:</label>
+        <input type="text" id="customizer-floating-text" class="search-input"
+          value="🔥 New PC Builder 2.0: Instant Socket Validation & Wattage Calculation"
+          oninput="updateFloatingText(this.value)">
+      </div>
+
+      <button class="btn-primary" style="width: 100%; margin-top: 12px;" onclick="saveCustomizerToStorage()">
+        💾 Save Customizations
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts Engine -->
+  <script src="app.js"></script>
+</body>
+
+</html>
